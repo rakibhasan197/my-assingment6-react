@@ -3,7 +3,7 @@ import stepImg from '../../assets/user.png'
 
 const StepCard = () => {
   return (
-    <div className='mb-20'>
+    <div className='my-20 '>
      <div className='text-center'>
       
        <h1 className='text-5xl font-bold'>Get Started in 3 Steps</h1>

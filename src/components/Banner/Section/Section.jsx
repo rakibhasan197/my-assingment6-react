@@ -2,8 +2,8 @@ import React from 'react';
 
 const Section = () => {
   return (
-    <div className='border-purple-500 bg-linear-to-r from-purple-600 to-purple-400 mt-20 mb-20'>
-      <div className='flex gap-30 py-15 px-20 max-w-[60%] mx-auto'>
+    <div className='bg-linear-to-r from-purple-600 to-purple-400 mt-20 mb-20'>
+      <div className='grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-30 py-15 px-20 max-w-[60%] mx-auto'>
         <div>
         <h1 className='text-5xl font-bold text-white'>50K+</h1>
         <p className='text-gray-400'>Active Users</p>
@@ -17,7 +17,9 @@ const Section = () => {
         <p className='text-gray-400'>Rating</p>
       </div>
       </div>
+    
     </div>
+    
   );
 };
 
