@@ -1,6 +1,7 @@
 import React from 'react';
 import { CiShoppingCart } from 'react-icons/ci';
-const Navbar = () => {
+const Navbar = ({carts, isCount}) => {
+  console.log(carts)
   return (
     <div className="navbar bg-base-100 max-w-[80%] mx-auto">
       <div className="navbar-start">
@@ -34,8 +35,9 @@ const Navbar = () => {
           <li className="font-semibold text-[#474849]">FAQ</li>
         </ul>
       </div>
-      <div className="navbar-end gap-2">
-        <CiShoppingCart />
+      <div className="navbar-end gap-4">
+        <div className='flex justify-center items-center'><CiShoppingCart />{isCount ? <span className='bg-red-400 p-[2px] text-gray-300 rounded-[50%] relative -top-4 right-2'>{carts.length}</span>: null}</div>
+        
         <p className="font-semibold text-[#474849]">Login</p>
         <button className="btn bg-linear-to-r from-purple-600 to-purple-400 rounded-full">
           Get Started

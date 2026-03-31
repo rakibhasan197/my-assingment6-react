@@ -1,15 +1,18 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const TabCart = ({carts, setCarts}) => {
   const totalPrice = carts.reduce((sum, item)=> sum + item.price, 0)
   const handleProceed = ()=>{
     setCarts([]);
+    toast.success("proceed to cart successfully")
   }
 
   const handleDelete =(item)=>{
    const filteredArray = carts.filter(cart=> cart.id != item.id)
   
    setCarts(filteredArray)
+   toast.error("delete item!")
   }
   return (
     <div className='p-10 max-w-[80%] mx-auto shadow-sm'>

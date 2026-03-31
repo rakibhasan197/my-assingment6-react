@@ -15,17 +15,19 @@ const getProducts = async ()=>{
   return res.json()
 }
 
+const productPromise = getProducts();
 
 function App() {
- const productPromise = getProducts();
+ 
  const [activeTab, setActiveTab] = useState('product');
+ const [isCount, setIsCount] = useState(false)
  const [carts , setCarts] = useState([])
 
 
   return (
     <>
 
-  <Navbar></Navbar>
+<Navbar carts={carts} isCount={isCount}></Navbar>
   <Banner></Banner>
   <Section></Section>
 
@@ -43,9 +45,9 @@ function App() {
 </div>
 
 
-  <Suspense>
-   { activeTab === "product" ? <MainSection productPromise={productPromise} carts={carts} setCarts={setCarts}></MainSection> : null}
-  </Suspense>
+  
+   { activeTab === "product" ? <MainSection productPromise={productPromise} carts={carts} setCarts={setCarts} setIsCount={setIsCount}></MainSection> : null}
+  
   {activeTab === "Cart" ? <TabCart carts={carts} setCarts={setCarts}></TabCart> : null}
   <StepCard></StepCard>
   <PricingCard></PricingCard>

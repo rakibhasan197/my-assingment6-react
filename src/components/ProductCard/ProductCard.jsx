@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import { FaCheckCircle, FaRegCheckCircle } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
-const ProductCard = ({product , carts, setCarts}) => {
+const ProductCard = ({product , carts, setCarts, setIsCount}) => {
   const [isBuy, setIsBuy] = useState(false)
 
   const handleBuyClick =()=>{
     setIsBuy(true);
+    setIsCount(true);
+    const isFound = carts.find(c=> c.id === product.id)
+    if(isFound){
+      toast.error("Cart is already exist!")
+      return;
+    }
+    
     setCarts([...carts, product])
+    toast("added to card successfully")
   }
   return (
     <div key={product.id} className='p-4 w-80 shadow-sm gap-4 rounded-2xl space-y-2'>
