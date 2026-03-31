@@ -5,16 +5,16 @@ const Navbar = ({ carts }) => {
   return (
     <div className="navbar bg-base-100 max-w-[90%] mx-auto">
 
-      {/* LEFT */}
+      
       <div className="navbar-start">
 
-        {/* Mobile menu button */}
+        
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost md:hidden lg:hidden">
             ☰
           </div>
 
-          {/* Mobile menu */}
+        
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
@@ -27,13 +27,13 @@ const Navbar = ({ carts }) => {
           </ul>
         </div>
 
-        {/* Logo */}
+      
         <a className="text-2xl md:text-3xl bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent p-4 font-bold">
           DigiTools
         </a>
       </div>
 
-      {/* CENTER (desktop only) */}
+    
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-5">
           <li className="font-semibold text-[#474849]">Products</li>
